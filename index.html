@@ -4,18 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reporte de Rendimiento & Crecimiento — @soyfernandarangel</title>
-  
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
-  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg-gradient: linear-gradient(135deg, #fdf4ff 0%, #f0fdf4 40%, #eff6ff 100%);
+      --bg-gradient: linear-gradient(135deg, #fdf4ff 0%, #f0fdf4 50%, #eff6ff 100%);
       --card-bg: #ffffff;
       --text-main: #0f172a;
       --text-muted: #64748b;
@@ -36,9 +34,6 @@
 
       --pastel-amber-bg: #fef3c7;
       --pastel-amber-text: #92400e;
-
-      --pastel-teal-bg: #ccfbf1;
-      --pastel-teal-text: #115e59;
 
       --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.04);
       --shadow-lg: 0 12px 32px rgba(16, 185, 129, 0.12);
@@ -62,7 +57,7 @@
 
     .app-container {
       width: 100%;
-      max-width: 520px; /* Prioridad Móvil */
+      max-width: 520px;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -73,9 +68,9 @@
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(12px);
       border-radius: 24px;
-      padding: 22px 20px;
+      padding: 20px;
       text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.7);
       box-shadow: var(--shadow-sm);
     }
 
@@ -83,17 +78,16 @@
       display: inline-block;
       background: var(--pastel-purple-bg);
       color: var(--pastel-purple-text);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 800;
       padding: 6px 16px;
       border-radius: 50px;
       margin-bottom: 10px;
-      letter-spacing: 0.3px;
     }
 
     h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.85rem;
+      font-size: 1.8rem;
       font-weight: 900;
       line-height: 1.15;
       color: #0f172a;
@@ -108,8 +102,8 @@
 
     /* Optimization Alert Box */
     .alert-card {
-      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
-      border: 2px solid #bfdbfe;
+      background: linear-gradient(135deg, #fef3c7 0%, #ffffff 100%);
+      border: 2px solid #fde68a;
       border-radius: 24px;
       padding: 16px 18px;
       box-shadow: var(--shadow-sm);
@@ -127,13 +121,13 @@
       font-family: 'Outfit', sans-serif;
       font-size: 0.95rem;
       font-weight: 800;
-      color: var(--pastel-blue-text);
+      color: var(--pastel-amber-text);
       margin-bottom: 2px;
     }
 
     .alert-content p {
       font-size: 0.78rem;
-      color: #1e3a8a;
+      color: #78350f;
       line-height: 1.35;
       font-weight: 500;
     }
@@ -143,7 +137,7 @@
       background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
       border: 2px solid #bfdbfe;
       border-radius: 28px;
-      padding: 22px 20px;
+      padding: 20px;
       box-shadow: var(--shadow-sm);
     }
 
@@ -163,52 +157,12 @@
     }
 
     .growth-badge {
-      background: #2563eb;
-      color: #ffffff;
-      font-size: 0.75rem;
+      background: var(--pastel-blue-bg);
+      color: var(--pastel-blue-text);
+      font-size: 0.7rem;
       font-weight: 800;
-      padding: 5px 12px;
+      padding: 4px 10px;
       border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
-    }
-
-    /* Main Followers Highlight */
-    .followers-hero-box {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      padding: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: 1px solid #dbeafe;
-      margin-bottom: 14px;
-    }
-
-    .f-hero-item {
-      text-align: center;
-      flex: 1;
-    }
-
-    .f-hero-divider {
-      width: 1px;
-      height: 32px;
-      background: #cbd5e1;
-    }
-
-    .f-hero-num {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #1e3a8a;
-      line-height: 1;
-    }
-
-    .f-hero-label {
-      font-size: 0.65rem;
-      color: var(--text-muted);
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-top: 4px;
     }
 
     .growth-grid {
@@ -235,7 +189,7 @@
 
     .g-val {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 900;
       color: #1e3a8a;
       margin-top: 2px;
@@ -243,17 +197,17 @@
 
     /* High Fidelity Funnel Details */
     .quality-funnel-box {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 20px;
       padding: 16px;
       border: 1px dashed #93c5fd;
     }
 
     .funnel-title {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 800;
       color: #1e40af;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -275,12 +229,12 @@
     }
 
     .step-num {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: #dbeafe;
       color: #1e40af;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 800;
       display: flex;
       align-items: center;
@@ -289,8 +243,8 @@
     }
 
     .quality-highlight {
-      margin-top: 12px;
-      padding: 10px 12px;
+      margin-top: 10px;
+      padding: 8px 12px;
       background: #f0fdf4;
       border-radius: 12px;
       font-size: 0.72rem;
@@ -466,80 +420,36 @@
       margin-top: 2px;
     }
 
-    /* Totalization Card Styling */
+    /* Total Spent Card */
     .total-card {
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       color: #ffffff;
-      border-radius: 28px;
-      padding: 22px 20px;
+      border-radius: 24px;
+      padding: 20px;
       box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
-      border: 1px solid #334155;
     }
 
     .total-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
-    }
-
-    .total-title {
       font-size: 0.75rem;
       text-transform: uppercase;
       font-weight: 800;
       color: #94a3b8;
       letter-spacing: 0.5px;
-    }
-
-    .total-badge {
-      background: rgba(255, 255, 255, 0.1);
-      color: #86efac;
-      font-size: 0.7rem;
-      font-weight: 800;
-      padding: 4px 10px;
-      border-radius: 20px;
-      border: 1px solid rgba(134, 239, 172, 0.2);
-    }
-
-    .total-main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 12px 0 16px;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
-      margin-bottom: 14px;
-    }
-
-    .total-main-label {
-      font-size: 0.72rem;
-      color: #94a3b8;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .total-main-amount {
-      font-family: 'Outfit', sans-serif;
-      font-size: 2.3rem;
-      font-weight: 900;
-      color: #86efac;
-      line-height: 1.1;
-      margin-top: 4px;
+      margin-bottom: 12px;
     }
 
     .total-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      text-align: center;
     }
 
     .t-box {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 12px 6px;
       border-radius: 16px;
-      text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .t-label {
@@ -552,8 +462,8 @@
     .t-val {
       font-family: 'Outfit', sans-serif;
       font-size: 1.25rem;
-      font-weight: 800;
-      color: #f8fafc;
+      font-weight: 900;
+      color: #86efac;
       margin-top: 2px;
     }
 
@@ -612,19 +522,19 @@
 
   <div class="app-container">
     
-    <!-- Header Banner -->
+    <!-- Header -->
     <header>
       <span class="profile-handle">@soyfernandarangel</span>
-      <h1>Análisis de Pauta & Conversión</h1>
-      <p class="subtitle">Actualización al 30 de Septiembre de 2026</p>
+      <h1>Análisis de Pauta & Crecimiento</h1>
+      <p class="subtitle">Desempeño de Anuncios y Conversión a Seguidores</p>
     </header>
 
     <!-- Optimization Alert -->
     <section class="alert-card">
-      <div class="alert-icon">🔄</div>
+      <div class="alert-icon">🛠️</div>
       <div class="alert-content">
         <h3>Ajustes de Pauta Recientes</h3>
-        <p>Se dio de baja el anuncio ineficiente <strong>"Capítulo 1 de la serie..."</strong> y se activó un nuevo Reel el 29 de sep: <strong>"✨ Planificar juntos es u..."</strong>.</p>
+        <p>Se <strong>pausó definitivamente</strong> la publicación <em>"¿Alguna mamá por aquí..."</em> por ser la menos eficiente. Se integró la nueva prueba activa <em>"Planificar juntos es u..."</em>.</p>
       </div>
     </section>
 
@@ -632,25 +542,7 @@
     <section class="growth-card">
       <div class="growth-header">
         <span class="growth-title">Impacto en Comunidad</span>
-        <span class="growth-badge">+53 Nuevos Seguidores</span>
-      </div>
-
-      <!-- Followers Growth Hero Box -->
-      <div class="followers-hero-box">
-        <div class="f-hero-item">
-          <div class="f-hero-num" style="color: #64748b;">1,631</div>
-          <div class="f-hero-label">Iniciales</div>
-        </div>
-        <div class="f-hero-divider"></div>
-        <div class="f-hero-item">
-          <div class="f-hero-num">1,684</div>
-          <div class="f-hero-label">Actuales</div>
-        </div>
-        <div class="f-hero-divider"></div>
-        <div class="f-hero-item">
-          <div class="f-hero-num" style="color: #059669;">+53</div>
-          <div class="f-hero-label">Ganados</div>
-        </div>
+        <span class="growth-badge">1,631 ➔ 1,684 (+53 Seg.)</span>
       </div>
       
       <div class="growth-grid">
@@ -659,12 +551,12 @@
           <div class="g-val">686</div>
         </div>
         <div class="g-box">
-          <div class="g-label">Tasa Conv.</div>
-          <div class="g-val" style="color: #059669;">7.73%</div>
+          <div class="g-label">Conv. Visita</div>
+          <div class="g-val">7.73%</div>
         </div>
         <div class="g-box">
-          <div class="g-label">Costo x Seguidor</div>
-          <div class="g-val" style="color: #2563eb;">$7.30 MXN</div>
+          <div class="g-label">Costo/Seg.</div>
+          <div class="g-val" style="color: #059669;">$7.30</div>
         </div>
       </div>
 
@@ -692,27 +584,27 @@
           </div>
         </div>
         <div class="quality-highlight">
-          ✨ Esta secuencia de múltiples acciones conscientes incrementa notablemente la calidad, retención y valor de cada seguidor ganado ($7.30 MXN por seguidor de alto valor).
+          ✨ Esta secuencia de múltiples acciones conscientes incrementa notablemente la calidad, retención y valor de cada seguidor ganado.
         </div>
       </div>
     </section>
 
     <!-- Publicación Ganadora -->
     <section class="winner-card">
-      <div class="winner-tag">🏆 89.8% DEL TRÁFICO</div>
-      <div class="winner-title">Reel Super Ganador (Sep 28)</div>
-      <div class="winner-name">"Fuertes declaraciones d..."</div>
+      <div class="winner-tag">🏆 89.8% DE LAS VISITAS</div>
+      <div class="winner-title">Reel Estrellas</div>
+      <div class="winner-name">Reel Sep 28: "Fuertes declaraciones d..."</div>
 
       <div class="hero-stats">
         <div class="stat-box">
           <div class="stat-label">Costo x Visita</div>
           <div class="stat-number">$0.31</div>
-          <div class="stat-subtext">¡Aún más barato!</div>
+          <div class="stat-subtext">vs $2.75 promedio otros</div>
         </div>
         <div class="stat-box">
-          <div class="stat-label">Visitas Perfil</div>
+          <div class="stat-label">Visitas Generadas</div>
           <div class="stat-number">616</div>
-          <div class="stat-subtext">De 686 totales</div>
+          <div class="stat-subtext">616 de 686 totales</div>
         </div>
       </div>
     </section>
@@ -720,7 +612,7 @@
     <!-- Gráfica -->
     <section class="chart-card">
       <h2 class="section-title">Visitas Generadas vs Costo</h2>
-      <p class="section-desc">Comparativa del costo individual por visita según el anuncio activo.</p>
+      <p class="section-desc">Comparativa del costo por visita individual entre las publicaciones activas y pausadas.</p>
       
       <div class="chart-wrapper">
         <canvas id="performanceChart"></canvas>
@@ -731,11 +623,11 @@
     <section class="comparison-list">
       <h2 class="section-title" style="margin-left: 4px;">Detalle por Anuncio</h2>
 
-      <!-- Reel Ganador -->
+      <!-- Reel 3 (Ganador) -->
       <article class="reel-item" style="border: 1.5px solid #86efac;">
         <div class="reel-header">
-          <span class="reel-name">Fuertes declaraciones... (Sep 28)</span>
-          <span class="reel-badge" style="background:#dcfce7; color:#14532d;">Super Ganador</span>
+          <span class="reel-name">Reel Sep 28: Fuertes declaraciones...</span>
+          <span class="reel-badge" style="background:#dcfce7; color:#14532d;">Ganador Activo</span>
         </div>
         <div class="reel-metrics">
           <div>
@@ -753,11 +645,11 @@
         </div>
       </article>
 
-      <!-- Nuevo Reel -->
+      <!-- Reel Nuevo Sep 29 -->
       <article class="reel-item">
         <div class="reel-header">
-          <span class="reel-name">✨ Planificar juntos... (Sep 29)</span>
-          <span class="reel-badge badge-blue">Recién Activado</span>
+          <span class="reel-name">Reel Sep 29: Planificar juntos es u...</span>
+          <span class="reel-badge badge-blue">Nuevo Activo</span>
         </div>
         <div class="reel-metrics">
           <div>
@@ -775,11 +667,11 @@
         </div>
       </article>
 
-      <!-- Reel Mamá -->
-      <article class="reel-item">
+      <!-- Reel Mamá (Pausado Definitivo) -->
+      <article class="reel-item" style="opacity: 0.75; background: #fffbfb;">
         <div class="reel-header">
-          <span class="reel-name">¿Alguna mamá por aquí... (Sep 28)</span>
-          <span class="reel-badge badge-rose">Ineficiente</span>
+          <span class="reel-name">Reel Sep 28: ¿Alguna mamá por aquí...</span>
+          <span class="reel-badge badge-amber">Pausado Definitivamente</span>
         </div>
         <div class="reel-metrics">
           <div>
@@ -796,47 +688,38 @@
           </div>
         </div>
       </article>
-
-      <div style="font-size: 0.72rem; color: #64748b; padding: 4px 8px; text-align: center;">
-        ℹ️ <em>Nota: El anuncio "Capítulo 1 de la serie..." fue dado de baja previamente.</em>
-      </div>
     </section>
 
-    <!-- Resumen Gráfico y Totalización Acumulada -->
+    <!-- Total Acumulado -->
     <section class="total-card">
-      <div class="total-header">
-        <span class="total-title">Resumen Gráfico & Acumulado</span>
-        <span class="total-badge">Balance General</span>
-      </div>
-
-      <div class="total-main">
-        <span class="total-main-label">Inversión Total Acumulada</span>
-        <span class="total-main-amount">$386.65 MXN</span>
-      </div>
-
+      <div class="total-header">💰 Inversión Total Acumulada al Momento</div>
       <div class="total-grid">
         <div class="t-box">
-          <div class="t-label">Visitas Totales</div>
+          <div class="t-label">Dinero Gastado</div>
+          <div class="t-val">$386.65</div>
+        </div>
+        <div class="t-box">
+          <div class="t-label">Visitas Perfil</div>
           <div class="t-val">686</div>
         </div>
         <div class="t-box">
-          <div class="t-label">CPV Promedio Global</div>
-          <div class="t-val" style="color: #86efac;">$0.56 MXN</div>
+          <div class="t-label">CPV Promedio</div>
+          <div class="t-val">$0.56</div>
         </div>
       </div>
     </section>
 
-    <!-- Insights y Estrategia -->
+    <!-- Insights -->
     <section class="insights-card">
-      <h2>💡 Recomendaciones Estratégicas</h2>
+      <h2>💡 Estrategia Sugerida</h2>
       <ul class="insights-list">
         <li>
           <span>1</span>
-          <div><strong>Maximizar el Ganador:</strong> El Reel <em>"Fuertes declaraciones..."</em> mejoró aún más su CPV a <strong>$0.31 MXN</strong> y genera el 89.8% de tus visitas. Es el motor principal del crecimiento a $7.30 MXN por seguidor.</div>
+          <div><strong>Maximizar el Anuncio Estrella:</strong> Mantener el presupuesto fuerte en <em>"Fuertes declaraciones..."</em> ya que sigue manteniendo un costo por visita sumamente rentable de $0.31 MXN.</div>
         </li>
         <li>
           <span>2</span>
-          <div><strong>Evaluar el Nuevo Reel:</strong> <em>"Planificar juntos..."</em> tiene un CPV de $2.51 MXN. Si no reduce costo en las próximas 24 horas, conviene pausarlo y redirigir el presupuesto al ganador.</div>
+          <div><strong>Acompañamiento en el Perfil:</strong> Con un costo por seguidor de $7.30 MXN, mantener historias y publicaciones fijadas relevantes para que el tráfico entrante mantenga la alta conversión actual (7.73%).</div>
         </li>
       </ul>
     </section>
@@ -853,24 +736,24 @@
     new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Fuertes Declaraciones', 'Planificar Juntos', 'Mamá por aquí'],
+        labels: ['Reel Sep 29 (Nuevo)', 'Reel Sep 28 (Pausado)', 'Reel Sep 28 (Ganador)'],
         datasets: [
           {
             label: 'Visitas al Perfil',
-            data: [616, 36, 34],
+            data: [36, 34, 616],
             backgroundColor: [
-              'rgba(16, 185, 129, 0.85)',
-              'rgba(59, 130, 246, 0.5)',
-              'rgba(244, 63, 94, 0.45)'
+              'rgba(59, 130, 246, 0.55)',
+              'rgba(245, 158, 11, 0.45)',
+              'rgba(16, 185, 129, 0.85)'
             ],
-            borderColor: ['#10b981', '#3b82f6', '#f43f5e'],
+            borderColor: ['#3b82f6', '#f59e0b', '#10b981'],
             borderWidth: 2,
             borderRadius: 12,
             yAxisID: 'y'
           },
           {
             label: 'Costo por Visita ($)',
-            data: [0.31, 2.51, 3.03],
+            data: [2.51, 3.03, 0.31],
             type: 'line',
             borderColor: '#f59e0b',
             backgroundColor: '#f59e0b',
@@ -884,23 +767,23 @@
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-          legend: { position: 'bottom', labels: { font: { size: 11, weight: '600', family: 'Plus Jakarta Sans' } } }
+          legend: { position: 'bottom', labels: { font: { size: 11, weight: '600' } } }
         },
         scales: {
-          x: { grid: { display: false }, ticks: { font: { family: 'Plus Jakarta Sans', size: 10, weight: '600' } } },
+          x: { grid: { display: false } },
           y: {
             type: 'linear',
             display: true,
             position: 'left',
-            title: { display: true, text: 'Visitas', font: { family: 'Plus Jakarta Sans', size: 10, weight: '700' } }
+            title: { display: true, text: 'Visitas' }
           },
           y1: {
             type: 'linear',
             display: true,
             position: 'right',
-            title: { display: true, text: 'CPV ($)', font: { family: 'Plus Jakarta Sans', size: 10, weight: '700' } },
+            title: { display: true, text: 'CPV ($)' },
             grid: { drawOnChartArea: false },
-            ticks: { callback: function(val) { return '$' + val.toFixed(2); }, font: { family: 'Plus Jakarta Sans', size: 10 } }
+            ticks: { callback: function(val) { return '$' + val.toFixed(2); } }
           }
         }
       }
